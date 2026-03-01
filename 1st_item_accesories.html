@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - HDID</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style_v2.css">
+    <style>
+        .product-page-container {
+            padding-top: 140px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            min-height: 70vh;
+        }
+
+        .product-gallery {
+            background-color: transparent;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            position: relative;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-details .product-category {
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-details .product-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .product-details .product-price {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .product-desc {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .size-selector {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .size-selector h4 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .size-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .size-btn {
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-md);
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .size-btn:hover,
+        .size-btn.active {
+            border-color: var(--text-primary);
+            background: var(--text-primary);
+            color: var(--bg-color);
+        }
+
+        .add-to-cart-container {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .add-to-cart-container .btn {
+            flex-grow: 1;
+        }
+
+        .details-accordion {
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-md) 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .product-page-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- V12 Mobile Sticky Header -->
+    <div class="mobile-sticky-header">
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+        <div class="sticky-utilities">
+            <a href="#" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+            <a href="cart.html" aria-label="Cart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></a>
+            <a href="login.html" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        </div>
+    </div>
+
+    <div class="splash-background"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu-panel">
+        <button class="mobile-menu-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <div class="mobile-nav-links">
+            <a href="shop.html" class="mobile-link">SHOP</a>
+            <a href="catalog.html" class="mobile-link">CATALOG</a>
+            <a href="wishlist.html" class="mobile-link">WISHLIST</a>
+            <a href="return-policy.html" class="mobile-link">RETURN POLICY</a>
+            <a href="pre-order-status.html" class="mobile-link">PRE - ORDER STATUS</a>
+        </div>
+
+        </div>
+    </div>
+
+    <header class="global-header">
+        <div class="header-left">
+            <div class="nav-staggered">
+                <div class="nav-row nav-row-top">
+                    <a href="shop.html" class="link-item">SHOP</a>
+                    <a href="catalog.html" class="link-item">CATALOG</a>
+                    <a href="wishlist.html" class="link-item">WISHLIST</a>
+                </div>
+                <div class="nav-row nav-row-bottom">
+                    <a href="return-policy.html" class="link-item">RETURN POLICY</a>
+                    <a href="pre-order-status.html" class="link-item">PRE - ORDER STATUS</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-center">
+                <a href="index.html" class="logo-link">
+                    <img src="./images/logo/logo-3d.gif" alt="HDID Logo" class="header-large-logo">
+                </a>
+                <div class="header-center-bottom">
+                    
+                    <div class="header-categories">
+                        <a href="t-shirts.html" class="category-item">T-SHIRTS</a>
+                        <a href="sweatpants.html" class="category-item">SWEATPANTS</a>
+                        <a href="accesories.html" class="category-item">ACCESEORIES</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <a href="#" aria-label="Search" class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+                <a href="cart.html" aria-label="Cart" class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Account" class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+    <!-- Restored Top Announcement Ticker -->
+    <div class="top-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-content">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <div class="ticker-content">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <!-- Main Content -->
+        <main class="container">
+            <div class="product-page-container fade-in-up">
+                <!-- Left Column: Gallery -->
+                <div class="product-gallery carousel-container">
+                    <button class="carousel-btn prev-btn" aria-label="Previous image">&lt;</button>
+                    <img src="./images/1st_item_accesories/1.png" alt="1st_item_accesories 1" class="product-img carousel-slide active">
+                    <img src="./images/1st_item_accesories/2.png" alt="1st_item_accesories 2" class="product-img carousel-slide">
+                    <img src="./images/1st_item_accesories/3.png" alt="1st_item_accesories 3" class="product-img carousel-slide">
+                    <button class="carousel-btn next-btn" aria-label="Next image">&gt;</button>
+                </div>
+
+                <!-- Right Column: Details -->
+                <div class="product-details layout-v4">
+                    <h1 class="product-title-pill" data-edit-id="prod-2nd-title">1st_item_accesories</h1>
+                    <p class="product-price-pill" data-edit-id="prod-2nd-price">$25.00 USD</p>
+                    <p class="product-tax" data-edit-id="prod-2nd-tax">Tax included.</p>
+
+                    <div class="size-selector-pill">
+                        <label class="pill-label">Size</label>
+                        <div class="size-buttons-pill">
+                            <button class="size-btn-pill active">XS</button>
+                            <button class="size-btn-pill">S</button>
+                            <button class="size-btn-pill">M</button>
+                            <button class="size-btn-pill">L</button>
+                            <button class="size-btn-pill">XL</button>
+                            <button class="size-btn-pill">XXL</button>
+                        </div>
+                    </div>
+
+                    <div class="quantity-selector-pill">
+                        <label class="pill-label">Quantity</label>
+                        <div class="quantity-controls-pill">
+                            <button class="qty-btn" aria-label="Decrease quantity">-</button>
+                            <span class="qty-value">1</span>
+                            <button class="qty-btn" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-pill" onclick="alert('Item added to cart!')">
+                        <svg class="cart-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        ADD TO CART
+                    </button>
+
+                    
+                    
+                    <div class="product-info-links">
+                        <div class="info-link-item" onclick="openPanel('empty')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Size Chart</span>
+                        </div>
+                        <div class="info-link-item" onclick="openPanel('empty')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="14" x2="4" y2="9"></line><line x1="4" y1="9" x2="9" y2="4"></line><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>
+                            <span>Return & Exchange Policy</span>
+                        </div>
+                        <div class="info-link-item" onclick="openPanel('empty')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18"></path><path d="M6 10V6c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v4"></path><path d="M4 10l1.3 10.4c.1.9 1 1.6 2 1.6h9.4c1 0 1.9-.7 2-1.6L20 10"></path></svg>
+                            <span>Care Instructions</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Minimalist Footer -->
+                        <!-- Massive Static Footer -->
+        <footer class="site-footer" style="padding: 4rem 0; border-top: 1px solid var(--border-color); margin-top: 4rem; background-color: var(--bg-color); overflow: hidden; text-align: center;">
+            <div style="font-size: 12vw; font-weight: 900; font-family: var(--font-family); color: var(--text-primary); letter-spacing: -0.05em; line-height: 1;">
+                HDID &copy; 2026
+            </div>
+        </footer>
+    </div>
+    <script src="./src/main.js"></script>
+
+    <script type="module" src="./src/carousel.js"></script>
+
+
+    <!-- Side Panel Structure -->
+    <div id="side-panel-overlay" class="side-panel-overlay" onclick="closePanel()"></div>
+    <div id="side-panel" class="side-panel">
+        <button class="close-panel-btn" aria-label="Close" onclick="closePanel()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div id="panel-content-area" class="panel-content"></div>
+    </div>
+    <script src="./src/side_panel.js"></script>
+    
+</body>
+
+</html>

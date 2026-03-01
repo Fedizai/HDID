@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HDID - Enter</title>
+    <!-- Google Fonts: Orbitron for the sci-fi/techwear look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style_v2.css">
+    <style>
+        /* Specific overrides for the strict splash screen layout */
+        body,
+        html {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            padding-top: 35px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f2e8dd;
+            /* Beige base matching the image */
+            background-image: none !important;
+            /* Remove the global watermark for the splash screen */
+            font-family: 'Orbitron', sans-serif;
+            color: #1a1a1a;
+        }
+
+        .splash-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .splash-logo {
+            width: 250px;
+            /* Adjust based on the gif's native size */
+            height: auto;
+            margin-bottom: 3rem;
+            /* Drop shadow as requested in the video reference */
+            filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.5));
+            transform: scale(1.1);
+            /* boost size slightly */
+        }
+
+        .date-time {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .link-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .link-item {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            /* Soft drop shadow on text */
+        }
+
+        .link-item:hover {
+            opacity: 0.6;
+            transform: scale(1.02);
+            letter-spacing: 0.1em;
+        }
+
+        .social-icons {
+            padding-bottom: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            z-index: 10;
+            align-items: center;
+            opacity: 0.5;
+            /* Match the faded look from the image */
+        }
+
+        .social-icons svg,
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+            color: #1a1a1a;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            filter: grayscale(100%);
+        }
+
+        .social-icons a:hover svg,
+        .social-icons a:hover img {
+            transform: translateY(-3px);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Announcement Ticker -->
+    <div class="top-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-content">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <div class="ticker-content">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="splash-content">
+        <img src="./images/logo/logo-3d.gif" alt="HDID 3D Logo" class="splash-logo">
+
+        <!-- Live Date/Time display -->
+        <div class="date-time" id="live-time">19/05/2024 3:17 PM</div>
+
+        <!-- Vertical Link Stack -->
+        <div class="link-stack">
+            <a href="shop.html" class="link-item">SHOP</a>
+            <a href="catalog.html" class="link-item">CATALOG</a>
+            <a href="wishlist.html" class="link-item">WISHLIST</a>
+            <a href="return-policy.html" class="link-item">RETURN POLICY</a>
+            <a href="pre-order-status.html" class="link-item">PRE - ORDER STATUS</a>
+        </div>
+    </div>
+
+    <!-- Minimalist footer icons matching the layout -->
+    <div class="social-icons">
+        <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Script to maintain the live date/time display -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+
+            // Format date: DD/MM/YYYY
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+
+            // Format time: HH:MM AM/PM
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+
+            const timeString = `${day}/${month}/${year} ${hours}:${minutes} ${ampm}`;
+            document.getElementById('live-time').textContent = timeString;
+        }
+
+        // Initialize and update every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+
+</html>

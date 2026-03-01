@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - HDID</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style_v2.css">
+    <style>
+        .shop-header {
+            padding-top: 140px;
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- V12 Mobile Sticky Header -->
+    <div class="mobile-sticky-header">
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+        <div class="sticky-utilities">
+            <a href="#" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+            <a href="cart.html" aria-label="Cart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></a>
+            <a href="login.html" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        </div>
+    </div>
+
+    <div class="splash-background"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu-panel">
+        <button class="mobile-menu-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <div class="mobile-nav-links">
+            <a href="shop.html" class="mobile-link">SHOP</a>
+            <a href="catalog.html" class="mobile-link">CATALOG</a>
+            <a href="wishlist.html" class="mobile-link">WISHLIST</a>
+            <a href="return-policy.html" class="mobile-link">RETURN POLICY</a>
+            <a href="pre-order-status.html" class="mobile-link">PRE - ORDER STATUS</a>
+        </div>
+    </div>
+
+
+    <div id="app">
+        <header class="global-header">
+            <div class="header-left">
+                <div class="nav-staggered">
+                    <div class="nav-row nav-row-top">
+                        <a href="shop.html" class="link-item">SHOP</a>
+                        <a href="catalog.html" class="link-item">CATALOG</a>
+                        <a href="wishlist.html" class="link-item">WISHLIST</a>
+                    </div>
+                    <div class="nav-row nav-row-bottom">
+                        <a href="return-policy.html" class="link-item">RETURN POLICY</a>
+                        <a href="pre-order-status.html" class="link-item">PRE - ORDER STATUS</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <a href="index.html" class="logo-link">
+                    <img src="./images/logo/logo-3d.gif" alt="HDID Logo" class="header-large-logo">
+                </a>
+                <div class="header-center-bottom">
+                    
+                    <div class="header-categories">
+                        <a href="t-shirts.html" class="category-item">T-SHIRTS</a>
+                        <a href="sweatpants.html" class="category-item">SWEATPANTS</a>
+                        <a href="accesories.html" class="category-item">ACCESEORIES</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <a href="#" aria-label="Search" class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </a>
+                <a href="cart.html" aria-label="Cart" class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </a>
+                <a href="#" aria-label="Account" class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+            </div>
+        </header>
+
+    <!-- Restored Top Announcement Ticker -->
+    <div class="top-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-content">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <div class="ticker-content">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| El lebsa ta7ki wa7adha |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <!-- Main Content -->
+        <main>
+            
+
+            <!-- Featured Products Gallery -->
+            <section id="new-arrivals" class="featured-products container">
+
+                <div class="product-grid">
+                    
+                    <!-- Product 1: Black and White -->
+                    <a href="1st_item_tshirt.html" style="text-decoration: none; color: inherit; display: block;"><article class="product-card carousel-card fade-in-up delay-1">
+                        <div class="product-image carousel-container">
+                            <button class="carousel-btn prev-btn" aria-label="Previous image">&lt;</button>
+                            <img src="./images/1st_item_tshirt/1.png" alt="Black and White 1"
+                                class="product-img carousel-slide active">
+                            <img src="./images/1st_item_tshirt/3.png" alt="Black and White 3"
+                                class="product-img carousel-slide">
+                            <img src="./images/1st_item_tshirt/2.png" alt="Black and White 2"
+                                class="product-img carousel-slide">
+                            <img src="./images/1st_item_tshirt/4.png" alt="Black and White 4"
+                                class="product-img carousel-slide">
+                            <img src="./images/1st_item_tshirt/5.png" alt="1st_item_tshirt view 5" class="product-img carousel-slide">
+                            <img src="./images/1st_item_tshirt/6.PNG" alt="1st_item_tshirt view 6" class="product-img carousel-slide">
+                            <img src="./images/1st_item_tshirt/7.png" alt="1st_item_tshirt view 7" class="product-img carousel-slide">
+                            <button class="carousel-btn next-btn" aria-label="Next image">&gt;</button>
+                            
+                            
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category" data-edit-id="shop-prod1-cat">Collection</span>
+                            <h3 class="product-name" data-edit-id="shop-prod1-name">1st_item_tshirt</h3>
+                            <p class="product-price" data-edit-id="shop-prod1-price">$120.00</p>
+                        </div>
+                    </article></a>
+                    <a href="1st_item_accesories.html" style="text-decoration: none; color: inherit; display: block;">
+                    <article class="product-card carousel-card fade-in-up delay-2">
+                        <div class="product-image carousel-container">
+                            <button class="carousel-btn prev-btn" aria-label="Previous image">&lt;</button>
+                            <img src="./images/1st_item_accesories/1.png" alt="1st_item_accesories 1" class="product-img carousel-slide active">
+                            <img src="./images/1st_item_accesories/2.png" alt="1st_item_accesories 2" class="product-img carousel-slide">
+                            <img src="./images/1st_item_accesories/3.png" alt="1st_item_accesories 3" class="product-img carousel-slide">
+                            <button class="carousel-btn next-btn" aria-label="Next image">&gt;</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category" data-edit-id="shop-prod2-cat">Collection</span>
+                            <h3 class="product-name" data-edit-id="shop-prod2-name">1st_item_accesories</h3>
+                            <p class="product-price" data-edit-id="shop-prod2-price">$120.00</p>
+                        </div>
+                    </article>
+                    </a>
+                    <a href="1st_item_sweatpants.html" style="text-decoration: none; color: inherit; display: block;">
+                    <article class="product-card carousel-card fade-in-up delay-3">
+                        <div class="product-image carousel-container">
+                            <button class="carousel-btn prev-btn" aria-label="Previous image">&lt;</button>
+                            <img src="./images/1st_item_sweatpants/1.png" alt="1st_item_sweatpants white 1" class="product-img carousel-slide active">
+                            <img src="./images/1st_item_sweatpants/2.png" alt="1st_item_sweatpants white 2" class="product-img carousel-slide">
+                            <img src="./images/1st_item_sweatpants/3.png" alt="1st_item_sweatpants black 1" class="product-img carousel-slide">
+                            <img src="./images/1st_item_sweatpants/4.png" alt="1st_item_sweatpants black 2" class="product-img carousel-slide">
+                            <button class="carousel-btn next-btn" aria-label="Next image">&gt;</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category" data-edit-id="shop-prod3-cat">Collection</span>
+                            <h3 class="product-name" data-edit-id="shop-prod3-name">1st_item_sweatpants</h3>
+                            <p class="product-price" data-edit-id="shop-prod3-price">$120.00</p>
+                        </div>
+                    </article>
+                    </a>
+
+
+
+                    
+                </div>
+            </section>
+        </main>
+        <!-- Minimalist Footer -->
+                        <!-- Massive Static Footer -->
+        <footer class="site-footer" style="padding: 4rem 0; border-top: 1px solid var(--border-color); margin-top: 4rem; background-color: var(--bg-color); overflow: hidden; text-align: center;">
+            <div style="font-size: 12vw; font-weight: 900; font-family: var(--font-family); color: var(--text-primary); letter-spacing: -0.05em; line-height: 1;">
+                HDID &copy; 2026
+            </div>
+        </footer>
+    </div>
+    <script src="./src/main.js"></script>
+    
+    <script type="module" src="./src/carousel.js"></script>
+    
+</body>
+
+</html>
