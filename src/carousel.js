@@ -32,5 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
             updateSlides();
         });
+
+        // Also allow clicking the active slide to advance to the next image (great for mobile)
+        slides.forEach(slide => {
+            slide.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                updateSlides();
+            });
+        });
     });
 });

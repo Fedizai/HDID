@@ -265,7 +265,3 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('scroll', scrollHandler, { passive: true });
     document.body.addEventListener('scroll', scrollHandler, { passive: true });
 });
-ticking = true;
-        }
-    }, { passive: true });
-});
